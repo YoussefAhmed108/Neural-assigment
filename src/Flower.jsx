@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Flower = ({ centerSize, centerColor, petalColors, petalNumber }) => {
-  
+  const [fitness, setFitness]=useState(0);
+  const [hovered, setHovered] = useState(false);
+
+  const onHover=()=>{
+   if (!hovered) {
+      setFitness(fitness + 1);
+     setHovered(true);
+   }
+  };
+    const onHoverClose=()=>{
+      setHovered(false);
+    }
+
   return (
+    <div onMouseEnter={onHover} onMouseLeave={onHoverClose} >
     <div className='flex flex-col border-[3px] border-solid border-[black] rounded-sm h-[300px] w-[200px]'>
       <div className='mt-auto'>
         
@@ -24,6 +37,10 @@ const Flower = ({ centerSize, centerColor, petalColors, petalNumber }) => {
         </div>
       </div>
     </div>
+        <div>
+          {fitness}
+        </div>
+        </div>
   )
 }
 
