@@ -17,7 +17,7 @@ export const generatePopulation = () => {
         flower[7] = parseInt(Math.random() * 7)
         population.push({ flower: flower, fitness: 0 })
     }
-    console.log(population)
+    //console.log(population)
     return population
 }
 
@@ -76,6 +76,7 @@ const mutation = (best) => {
 
 
 export const geneticAlgorithm = (population) => {
+    console.log(population)
     let generation = 0
     let best = null
     let newPopulation = []

@@ -13,24 +13,20 @@ function App() {
   const handleFitnessChange = (fitness , index) => {
     const newPop = [...population]
     newPop[index].fitness = fitness
-    console.log(newPop)
+    //console.log(newPop)
     setPopulation(newPop)
   }
 
 
   const startNewGeneration = () => {
     const startPop = generatePopulation()
-    console.log(startPop)
+    //console.log(startPop)
     setPopulation(startPop)
   }
   const makeNewGeneration = () => {
     const newPop = geneticAlgorithm(population)
-    console.log(newPop)
+    //console.log(newPop)
     setPopulation(newPop)
-    population.map(({flower , fitness} , index)=>{
-
-      handleFitnessChange(0,index)
-    })
   }
 
 
@@ -38,11 +34,6 @@ function App() {
     <div>
       <div className="flex flex-row gap-[20px] flex-wrap justify-center">
         {population.map(({flower , fitness} , index) => {
-
-          if(index == 0){
-            console.log(fitness)
-          }
-
             return(
               (
                 <Flower key={index} 
@@ -63,7 +54,7 @@ function App() {
       </div>
       <div className='flex flex-row gap-[100px] justify-center mt-[50px]'>
         <button onClick={startNewGeneration} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Start new Generation
+          Start new Population
         </button>
 
         <button onClick={makeNewGeneration} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

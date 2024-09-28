@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Petal from './Petal';
 const Flower = ({ index, centerSize, centerColor, petalColors, petalNumber, handleFitnessChange, initialfitness }) => {
 
-  //  console.log(initialfitness)
-  const petals = [];
   const [fitness, setFitness] = useState(initialfitness);
   const [hovered, setHovered] = useState(false);
   const translateValue = centerSize <= 56 
@@ -20,6 +18,11 @@ const Flower = ({ index, centerSize, centerColor, petalColors, petalNumber, hand
     }
   };
 
+  useEffect(() => {
+    setFitness(initialfitness); 
+  }, [initialfitness]);
+
+  
   useEffect(() => {
     handleFitnessChange(fitness, index)
   }, [fitness])
