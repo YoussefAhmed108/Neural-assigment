@@ -27,6 +27,10 @@ function App() {
     const newPop = geneticAlgorithm(population)
     console.log(newPop)
     setPopulation(newPop)
+    population.map(({flower , fitness} , index)=>{
+
+      handleFitnessChange(0,index)
+    })
   }
 
 
@@ -35,7 +39,9 @@ function App() {
       <div className="flex flex-row gap-[20px] flex-wrap justify-center">
         {population.map(({flower , fitness} , index) => {
 
-          console.log(fitness)
+          if(index == 0){
+            console.log(fitness)
+          }
 
             return(
               (

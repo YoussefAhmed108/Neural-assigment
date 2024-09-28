@@ -9,7 +9,7 @@ export const generatePopulation = () => {
 
         let flower = []
 
-        flower[0] = (parseInt(Math.random() * 10) + 1) * 5
+        flower[0] = Math.floor(Math.random() * (96 - 48 + 1)) + 48;
         for (let j = 1; j < 7; j++) {
             flower.push(parseInt(Math.random() * 256))
         }
