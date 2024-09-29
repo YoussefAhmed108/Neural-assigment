@@ -1,6 +1,6 @@
 let POP_SIZE = 8
 let MUTATION_RATE = 0.05
-
+let NO_OF_GENES = 8
 
 
 export const generatePopulation = () => {
@@ -10,7 +10,7 @@ export const generatePopulation = () => {
         let flower = []
 
         flower[0] = Math.floor(Math.random() * (96 - 48 + 1)) + 48;
-        for (let j = 1; j < 7; j++) {
+        for (let j = 1; j < NO_OF_GENES; j++) {
             flower.push(parseInt(Math.random() * 256))
         }
 
@@ -50,7 +50,7 @@ const crossover = (parent1, parent2) => {
 }
 
 const mutation = (best) => {
-    const numberOfMutations = Math.ceil(MUTATION_RATE * POP_SIZE)
+    const numberOfMutations = Math.ceil(NO_OF_GENES * MUTATION_RATE * POP_SIZE)
 
 
     console.log(numberOfMutations)
