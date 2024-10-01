@@ -58,7 +58,7 @@ const mutation = (best) => {
         const flower = best[Math.floor(Math.random() * best.length)].flower
         const gene = parseInt(Math.random() * 8)
         if (gene == 0) {
-            flower[gene] = parseInt(Math.random() * 10)
+            flower[gene] = Math.floor(Math.random() * (96 - 48 + 1)) + 48;
         } else {
             if (gene > 0 && gene < 7) {
                 flower[gene] = parseInt(Math.random() * 256)

@@ -16,22 +16,29 @@ function App() {
     //console.log(newPop)
     setPopulation(newPop)
   }
+  const addGeneration =()=>{
+    const tmp = count+1;
+    setCount(tmp);
+  }
 
 
   const startNewGeneration = () => {
+    setCount(0);
     const startPop = generatePopulation()
     //console.log(startPop)
     setPopulation(startPop)
   }
   const makeNewGeneration = () => {
+    addGeneration();
     const newPop = geneticAlgorithm(population)
     //console.log(newPop)
     setPopulation(newPop)
   }
 
-
+  
   return (
     <div>
+      <div>Generation: {count}</div>
       <div className="flex flex-row gap-[20px] flex-wrap justify-center">
         {population.map(({flower , fitness} , index) => {
             return(
