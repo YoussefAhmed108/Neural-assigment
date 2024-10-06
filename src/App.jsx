@@ -38,7 +38,7 @@ function App() {
   
   return (
     <div>
-      <div>Generation: {count}</div>
+      <div class='text-3xl'>Generation: {count}</div>
       <div className="flex flex-row gap-[20px] flex-wrap justify-center">
         {population.map(({flower , fitness} , index) => {
             return(
